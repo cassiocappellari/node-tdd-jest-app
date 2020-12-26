@@ -4,7 +4,6 @@ module.exports = {
   password: 'postgres',
   database: 'node-tdd-jest-app',
   dialect: 'postgres',
-  operatorsAliases: false,
   logging: false,
   define: {
     timestamps: true,

@@ -38,41 +38,34 @@ This application was built from scratch using **JavaScript**, **Node.js**, **Exp
 |route|HTTP Method|params|description
 |:---|:---:|:---:|:---:
 |`/user`|POST|Request body with `name`, `email` and `password`|Register a user
-|`/sessions`|POST|Request body with `email` and `password`|Authenticate a user and provide JWT token
-|`/dashboard`|GET|Request header with `Bearer + JWT token`|Sends a message if the user is sucessfully authenticated using the token provided as a return in the `/sessions` route
+|`/sessions`|POST|Request body with `email` and `password`|Authenticate a user returning a JWT token
+|`/dashboard`|GET|Request header with `Bearer` + `JWT token`|Sends return a message if the user is sucessfully authenticated using the token provided in the `/sessions` route
 
-**Requests**
+**Request Body**
 
-- POST: `/auth/register`
+- POST: `/user`
 ```json
 {
 	"name": "Exemple",
 	"email": "exemple@gmail.com",
-	"password": "123456"
+	"password": "123456789"
 }
 ```
 
-- POST: `/auth/authenticate`
+- POST: `/sessions`
 ```json
 {
 	"email": "exemple@gmail.com",
-	"password": "12345678"
+	"password": "123456789"
 }
 ```
 
-- POST: `/auth/forgot_password`
-```json
-{
-	"email": "exemple@gmail.com"
-}
-```
+**Request Header**
 
-- POST: `/auth/reset_password`
-```json
+- GET: `/dashboard`
+```
 {
-	"email": "exemple@gmail.com",
-	"token": "ebf60c2e5be235f96c0c0571c04fad1f843da9c7",
-	"password": "1234567890"
+	Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNjA5NzExMzUyfQ.4zk2v94Iz5X8-yjK5bQyB9mCF7YZvqS7-8RZ27_Yu94
 }
 ```
 

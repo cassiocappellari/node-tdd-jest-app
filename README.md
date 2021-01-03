@@ -38,8 +38,8 @@ This application was built from scratch using **JavaScript**, **Node.js**, **Exp
 |route|HTTP Method|params|description
 |:---|:---:|:---:|:---:
 |`/user`|POST|Request body with `name`, `email` and `password`|Register a user
-|`/sessions`|POST|Request body with `email` and `password`|Authenticate a user returning a JWT token
-|`/dashboard`|GET|Request header with `Bearer` + `JWT token`|Sends return a message if the user is sucessfully authenticated using the token provided in the `/sessions` route
+|`/sessions`|POST|Request body with `email` and `password`|Authenticate user returning a JWT token
+|`/dashboard`|GET|Request header with `Bearer` + `JWT token`|Sends a return message if the user is sucessfully authenticated using the token provided in the `/sessions` route
 
 **Request Body**
 

@@ -19,14 +19,14 @@ module.exports = {
   // Automatically clear mock calls and instances between every test
   clearMocks: true,
 
-  // // Indicates whether the coverage information should be collected while executing the test
-  // collectCoverage: true,
+  // Indicates whether the coverage information should be collected while executing the test
+  collectCoverage: true,
 
-  // // An array of glob patterns indicating a set of files for which coverage information should be collected
-  // collectCoverageFrom: ['src/**', '!src/database/migrations/**', '!src/server.js'], // pega o coverage apenas dos arquivos que estão na pasta 'src', ou seja, apenas os arquivos da aplicação; remove as migrations do coverage report
+  // An array of glob patterns indicating a set of files for which coverage information should be collected
+  collectCoverageFrom: ['src/**', '!src/database/migrations/**', '!src/server.js'], // pega o coverage apenas dos arquivos que estão na pasta 'src', ou seja, apenas os arquivos da aplicação; remove as migrations do coverage report
 
-  // // The directory where Jest should output its coverage files
-  // coverageDirectory: 'tests/coverage', // mostra o diretório de testes
+  // The directory where Jest should output its coverage files
+  coverageDirectory: 'tests/coverage', // mostra o diretório de testes
 
   // An array of regexp pattern strings used to skip coverage collection
   // coveragePathIgnorePatterns: [

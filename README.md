@@ -1,4 +1,4 @@
-<h1 align="center">API REST with Node.js, TDD and Jest</h1>
+<h1 align="center">Node.js application developed with TDD</h1>
 
 <h3 align="center"> 
 	Status: finished :heavy_check_mark:
@@ -6,13 +6,13 @@
 
 <p align="center">
 <a href="https://github.com/cassiocappellari/node-tdd-jest-app/commits/main">
-	<img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/cassiocappellari/node-tdd-jest-app/main?color=black">
+	<img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/cassiocappellari/node-tdd-jest-app?color=black">
 </a>
     
 <img alt="License" src="https://img.shields.io/badge/license-MIT-black">
 
 <a href="https://github.com/cassiocappellari/node-tdd-jest-app/stargazers">
-	<img alt="Stargazers" src="https://img.shields.io/github/stars/cassiocappellari/node-express-mongodb-app?style=social">
+	<img alt="Stargazers" src="https://img.shields.io/github/stars/cassiocappellari/node-tdd-jest-app?style=social">
 </a>
 </p>
 

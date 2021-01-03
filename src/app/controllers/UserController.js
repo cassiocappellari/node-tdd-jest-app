@@ -14,6 +14,16 @@ class UserController {
             password
         }
 
+        const results = await User.findOne({where: {email}})
+
+        if(results) {
+            const userEmail = results.dataValues.email
+    
+            if (userEmail === email) {
+                return res.status(401).json({message: 'user already registered'})
+            }
+        }
+
         try {
             await User.create(user)
         } catch (err) {

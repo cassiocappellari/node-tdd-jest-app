@@ -1,4 +1,4 @@
-<h1 align="center">Node.js application developed with TDD</h1>
+<h1 align="center">Node.js application developed with TDD principles</h1>
 
 <h3 align="center"> 
 	Status: finished :heavy_check_mark:
@@ -37,10 +37,9 @@ This application was built from scratch using **JavaScript**, **Node.js**, **Exp
 
 |route|HTTP Method|params|description
 |:---|:---:|:---:|:---:
-|`/auth/register`|POST|Request body with `name`, `email` and `password`|Register a user
-|`/auth/authenticate`|POST|Request body with `email` and `password`|Authenticate a user
-|`/auth/forgot_password`|POST|Request body with `email`|Sends a new access token to the email entered in the request body
-|`/auth/reset_password`|POST|Request body with `email`, `token` and `password`|Reset the access password through the registered email and the access token provided by email on the `forgot_password` route
+|`/user`|POST|Request body with `name`, `email` and `password`|Register a user
+|`/sessions`|POST|Request body with `email` and `password`|Authenticate a user and provide JWT token
+|`/dashboard`|GET|Request header with `Bearer + JWT token`|Sends a message if the user is sucessfully authenticated using the token provided as a return in the `/sessions` route
 
 **Requests**
 
@@ -76,42 +75,6 @@ This application was built from scratch using **JavaScript**, **Node.js**, **Exp
 	"password": "1234567890"
 }
 ```
-
-**CRUD Projects:**
-
-|route|HTTP Method|params|description
-|:---|:---:|:---:|:---:
-|`/projects`|GET| - |Lists the projects registered in the database
-|`/projects/:projectId`|GET|Query parameter with `projectId`|Lists a specific project through it's id
-|`/projects`|POST|Request body with `title`, `description` and `tasks`|Creates a new project
-|`/projects/:projectId`|PUT|Query parameter with `projectId`|Updates a specific project through it's id
-|`/projects/:projectId`|DELETE|Query parameter with `projectId`|Deletes a specific project through it's id
-
-**Requests**
-
-- GET: `/projects/5fd537a24c1f4316c1d21f2d`
-
-- POST: `/projects`
-```json
-{
-	"title": "New Project Test 2",
-	"description": "Project description Test",
-	"tasks": [
-		{
-			"title": "New task Test 2",
-			"assignedTo": "5fd537a24c1f4316c1d21f2d"
-		},
-		{
-			"title": "Another task Test 2",
-			"assignedTo": "5fd537a24c1f4316c1d21f2d"
-		}
-	]
-}
-```
-
-- PUT: `/projects/5fd537a24c1f4316c1d21f2d`
-
-- DELETE: `/projects/5fd537a24c1f4316c1d21f2d`
 
 ## 🤖 Technologies
 

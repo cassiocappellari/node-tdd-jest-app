@@ -1,6 +1,9 @@
 const {User} = require('../models')
 
 class SessionController {
+    async show(req, res) {
+        return res.status(200).json({message: 'User is authorized to access the Dashboard'})
+    }
     async store(req, res) {
         const {email, password} = req.body
 

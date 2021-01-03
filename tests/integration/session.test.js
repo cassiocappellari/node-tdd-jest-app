@@ -8,6 +8,20 @@ describe('Authentication', () => {
         await truncate()
     })
 
+    it('should create a new user with name, email and password', async () => {
+        const user = await factory.create('User')
+
+        const response = await request(app)
+            .post('/user')
+            .send({
+                name: user.name,
+                email: user.email,
+                password: user.password
+            })
+        
+        expect(response.status).toBe(200)
+    })
+
     it('should authenticate with valid credentials', async () => {
         const user = await factory.create('User', {
             password: '123123'

@@ -3,7 +3,7 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for src/app/middleware/auth.js</title>
+    <title>Code coverage report for src/app/controllers/UserController.js</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../../prettify.css" />
     <link rel="stylesheet" href="../../../base.css" />
@@ -19,34 +19,34 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/app/middleware</a> auth.js</h1>
+        <h1><a href="../../../index.html">All files</a> / <a href="index.html">src/app/controllers</a> UserController.js</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.3% </span>
+                <span class="strong">89.66% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>21/23</span>
+                <span class='fraction'>26/29</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">71.43% </span>
+                <span class="strong">60% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>5/7</span>
+                <span class='fraction'>3/5</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>1/1</span>
+                <span class='fraction'>2/2</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">91.3% </span>
+                <span class="strong">89.66% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>21/23</span>
+                <span class='fraction'>26/29</span>
             </div>
         
             
@@ -79,51 +79,69 @@
 <a name='L20'></a><a href='#L20'>20</a>
 <a name='L21'></a><a href='#L21'>21</a>
 <a name='L22'></a><a href='#L22'>22</a>
-<a name='L23'></a><a href='#L23'>23</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
+<a name='L23'></a><a href='#L23'>23</a>
+<a name='L24'></a><a href='#L24'>24</a>
+<a name='L25'></a><a href='#L25'>25</a>
+<a name='L26'></a><a href='#L26'>26</a>
+<a name='L27'></a><a href='#L27'>27</a>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">5x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">5x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">const jwt = require('jsonwebtoken')
-const {promisify} = require('util')
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span></td><td class="text"><pre class="prettyprint lang-js">const {User} = require('../models')
 &nbsp;
-module.exports = async (req, res, next) =&gt; {
-   const authHeader = req.headers.authorization
-   
-   if (!authHeader) {
-        return res.status(401).json({message: 'Token not provided'})
-   }
+class UserController {
+    async post(req, res) {
+        console.log(req.body)
+        const {
+            name,
+            email,
+            password
+        } = req.body
 &nbsp;
-   const[, token] = authHeader.split(' ')
+        const user = {
+            name,
+            email,
+            password
+        }
 &nbsp;
-   try {
-        const decoded = await promisify(jwt.verify)(token, process.env.APP_SECRET)
-&nbsp;
-        req.userId = decoded.id
-&nbsp;
-        return next()
-   }<span class="branch-0 cbranch-no" title="branch not covered" > c</span>atch (err) {
-        return res.status(401).json({message: 'Invalid token'})
-   }
+        try {
+<span class="branch-0 cbranch-no" title="branch not covered" >            await User.create({user})</span>
+        } catch (err) {
+            console.log(err)
+            return res.status(400).json({message: 'error creating user'})
+        }
 <span class="cstat-no" title="statement not covered" ><span class="branch-0 cbranch-no" title="branch not covered" ></span></span>
-<span class="cstat-no" title="statement not covered" >}</span></pre></td></tr></table></pre>
+<span class="cstat-no" title="statement not covered" >        return res.status(200).json({message: 'user created'})</span>
+<span class="cstat-no" title="statement not covered" >    }</span>
+}
+&nbsp;
+module.exports = new UserController()</pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->

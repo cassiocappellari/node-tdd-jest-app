@@ -21,6 +21,7 @@
 ## 📋 Index
 
 - [About](#-about)
+- [Routes](#-routes)
 - [Technologies](#-technologies)
 - [How To Use](#-how-to-use)
 - [Author](#-author)
@@ -28,7 +29,7 @@
 
 ## 🚀 About
 
-This application was built from scratch using **JavaScript**, **Node.js**, **Express** and **MongoDB** with MVC software design patterns. In this API was created routes for user registration with encrypted password which authenticates users by returning a **JWT token** to validate the login, with a feature that provides **password recovery through Nodemailer**.
+This application was built from scratch using **JavaScript**, **Node.js**, **Express**, **PostgreSQL**, **SQLite**, **Jest** and **Sequelize** using TDD principles.
 
 ## 🗺️ Routes
 
@@ -81,11 +82,11 @@ The project was developed using this technologies:
 ```bash
 # Clone this repository
 
-$ git clone https://github.com/cassiocappellari/node-express-mongodb-app.git
+$ git clone https://github.com/cassiocappellari/node-tdd-jest-app.git
 
 # Enter the project folder
 
-$ cd node-express-mongodb-app
+$ cd node-tdd-jest-app
 
 # Install the dependencies
 

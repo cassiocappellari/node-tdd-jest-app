@@ -31,7 +31,7 @@
 
 ## 🚀 About
 
-This application was built from scratch using JavaScript, Node.js, Express, PostgreSQL, SQLite, Jest and Sequelize using TDD principles. Besides the unit and integration tests, there are routes to register and authenticate a user and also a route that only a validated user has permission to access.
+This application was built from scratch using **JavaScript**, **Node.js**, **Express**, **PostgreSQL**, **SQLite**, **Jest** and **Sequelize** using TDD principles. Besides the **unit and integration tests**, there are routes to register and authenticate a user and also a route that only a validated user has permission to access.
 
 ## 🗺️ Routes
 
@@ -128,7 +128,7 @@ $ npm test
 
 ## Coverage Reports
 
-The coverage reports are automatically created after the tests run and you and see it inside `tests/coverage`.
+The coverage reports are automatically created after the tests run and you can see it inside `tests/coverage`.
 
 ## 👨‍🚀 Author
 

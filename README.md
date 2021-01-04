@@ -71,10 +71,11 @@ This application was built from scratch using **JavaScript**, **Node.js**, **Exp
 
 The project was developed using this technologies:
 
-- [MongoDB](https://www.mongodb.com/)
+- [PostgreSQL](https://www.postgresql.org/)
+- [SQLite3](https://www.sqlite.org/version3.html)
 - [Node.js](https://nodejs.org/en/)
 - [Express](https://expressjs.com/)
-- [Nodemailer](https://nodemailer.com/about/)
+- [Jest](https://jestjs.io/)
 - [JWT](https://www.npmjs.com/package/jsonwebtoken)
 
 ## ⚙ How to Use

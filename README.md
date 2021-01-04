@@ -22,14 +22,16 @@
 
 - [About](#-about)
 - [Routes](#-routes)
+- [.env](#-.env)
 - [Technologies](#-technologies)
 - [How To Use](#-how-to-use)
+- [Tests](#-running-tests)
 - [Author](#-author)
 - [License](#-license)
 
 ## 🚀 About
 
-This application was built from scratch using **JavaScript**, **Node.js**, **Express**, **PostgreSQL**, **SQLite**, **Jest** and **Sequelize** using TDD principles.
+This application was built from scratch using JavaScript, Node.js, Express, PostgreSQL, SQLite, Jest and Sequelize using TDD principles. Besides the unit and integration tests, there are routes to register and authenticate a user and also a route that only a validated user has permission to access.
 
 ## 🗺️ Routes
 
@@ -37,7 +39,7 @@ This application was built from scratch using **JavaScript**, **Node.js**, **Exp
 |:---|:---:|:---:|:---:
 |`/user`|POST|Request body with `name`, `email` and `password`|Register a user
 |`/sessions`|POST|Request body with `email` and `password`|Authenticate user returning a JWT token
-|`/dashboard`|GET|Request header with `Bearer` + `JWT token`|Sends a return message if the user is sucessfully authenticated using the token provided in the `/sessions` route
+|`/dashboard`|GET|Request header with `Bearer` + `JWT token`|Sends a return message if the user is successfully authenticated using the token provided in the `/sessions` route
 
 **Request Body**
 
@@ -66,6 +68,25 @@ This application was built from scratch using **JavaScript**, **Node.js**, **Exp
 	Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NywiaWF0IjoxNjA5NzExMzUyfQ.4zk2v94Iz5X8-yjK5bQyB9mCF7YZvqS7-8RZ27_Yu94
 }
 ```
+
+## 🔑 .env
+
+There are two files to configure the application environment.
+
+**tests.env**
+
+|key|description|default
+|:---|:---:|:---:
+|DB_DIALECT|Database used in the test environment|sqlite
+
+**development.env**
+
+|key|description|default
+|:---|:---:|:---:
+|DB_HOST|Localhost URL|127.0.0.1
+|DB_USERNAME|Username to authenticate in your local database| -
+|DB_PASSWORD|Password to authenticate in your local database| -
+|DB_DBNAME|Database name set on your local machine| -
 
 ## 🤖 Technologies
 
@@ -98,6 +119,16 @@ $ npm install
 $ node src/index.js
 
 ```
+
+## 🔬 Running Tests
+
+```
+$ npm test
+```
+
+## Coverage Reports
+
+The coverage reports are automatically created after the tests run and you and see it inside `tests/coverage`.
 
 ## 👨‍🚀 Author
 

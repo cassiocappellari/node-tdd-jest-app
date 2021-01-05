@@ -116,7 +116,7 @@ $ npm install
 
 # Start the project
 
-$ node src/index.js
+$ npm start
 
 ```
 
